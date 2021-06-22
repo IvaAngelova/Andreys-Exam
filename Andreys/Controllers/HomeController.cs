@@ -1,7 +1,8 @@
-﻿namespace Andreys.App.Controllers
+﻿using MyWebServer.Http;
+using MyWebServer.Controllers;
+
+namespace Andreys.App.Controllers
 {
-    using SIS.HTTP;
-    using SIS.MvcFramework;
 
     public class HomeController : Controller
     {
