@@ -18,7 +18,7 @@ namespace Andreys.App
                  .MapControllers())
              .WithServices(services => services
                  .Add<IViewEngine, CompilationViewEngine>()
-                 //.Add<IValidator, Validator>()
+                 .Add<IValidator, Validator>()
                  .Add<IPasswordHasher, PasswordHasher>()
                  .Add<AndreysDbContext>())
                  .WithConfiguration<AndreysDbContext>(context => context.Database.Migrate())
