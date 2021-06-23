@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Andreys.Data.Migrations
 {
     [DbContext(typeof(AndreysDbContext))]
-    [Migration("20210622185151_UserProductTables")]
+    [Migration("20210623141957_UserProductTables")]
     partial class UserProductTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,9 @@ namespace Andreys.Data.Migrations
 
                     b.Property<int>("Category")
                         .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");

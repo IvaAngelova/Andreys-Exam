@@ -26,6 +26,9 @@ namespace Andreys.Data.Migrations
                     b.Property<int>("Category")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 

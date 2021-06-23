@@ -3,11 +3,30 @@ using System.Collections.Generic;
 
 using Andreys.Data;
 using Andreys.Models.Users;
+using Andreys.Models.Products;
 
 namespace Andreys.Services
 {
     public class Validator : IValidator
     {
+        public ICollection<string> ValidateAddProduct(AddProductViewModel model)
+        {
+            var errors = new List<string>();
+
+            if (model.Name.Length < DataConstants.ProductNameMinLength
+                || model.Name.Length > DataConstants.ProductNameMaxLength)
+            {
+                errors.Add($"Product name '{model.Name}' is not valid! It must be between {DataConstants.ProductNameMinLength} and { DataConstants.ProductNameMaxLength}.");
+            }
+
+            if (model.Description.Length < DataConstants.PassowrdMinLength)
+            {
+                errors.Add($"The Description is not valid! Max length must be {DataConstants.DescriptionMaxLength}.");
+            }
+
+            return errors;
+        }
+
         public ICollection<string> ValidateUserRegistration(RegisterUserFormModel model)
         {
             var errors = new List<string>();
